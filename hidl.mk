@@ -14,100 +14,57 @@
 # limitations under the License.
 #
 
-# Audio HIDL
+# HIDL
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@2.0-impl \
     android.hardware.audio.effect@2.0-service \
     android.hardware.soundtrigger@2.0-impl \
-    android.hardware.soundtrigger@2.0-service
-
-# Bluetooth HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service
-
-# Camera
-PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service \
-    camera.device@3.2-impl
-
-# Display HIDL
-PRODUCT_PACKAGES += \
+    android.hardware.soundtrigger@2.0-service \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
-    android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service
-
-# DRM HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl
-
-# Dumpstate HAL
-PRODUCT_PACKAGES += \
-    android.hardware.dumpstate@1.0-service.msm8996
-
-# Fingerprint HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service
-
-# Gatekeeper HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl
-
-# GPS HIDL
-PRODUCT_PACKAGES += \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service \
+    camera.device@3.2-impl \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service \
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service \
     android.hardware.gnss@1.0-impl \
-    android.hardware.gnss@1.0-service
-
-# IR HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-impl
-
-# Keymaster HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
-
-# Lights HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service
-
-# Media HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.media.omx@1.0-impl
-
-# NFC HIDL
-PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-service \
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service \
+    android.hardware.biometrics.fingerprint@2.1-impl \
+    android.hardware.biometrics.fingerprint@2.1-service \
     android.hardware.nfc@1.0-impl \
-    android.hardware.nfc@1.0-service
-
-# Power HIDL
-PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.0-service \
+    android.hardware.thermal@1.0-impl \
+    android.hardware.thermal@1.0-service \
+    android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-service \
+    android.hardware.ir@1.0-impl \
+    android.hardware.ir@1.0-service \
+    android.hardware.bluetooth@1.0-service \
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.renderscript@1.0-impl \
+    android.hardware.usb@1.0-service \
+    android.hardware.wifi@1.0-service \
+    android.hardware.media.omx@1.0-impl \
+    android.hardware.dumpstate@1.0-service.msm8996 \
     android.hardware.power@1.1-service.msm8996
 
-# RenderScript HIDL
+# Net
 PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
-
-# Sensors HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service
-
-# USB HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
-
-# Vibrator HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl
-
-# WiFi HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service
+    android.system.net.netd@1.0 \
+    libandroid_net \
+    netutils-wrapper-1.0
