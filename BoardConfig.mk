@@ -18,6 +18,9 @@ BOARD_VENDOR := xiaomi
 
 DEVICE_PATH := device/xiaomi/gemini
 
+# Build a separate vendor.img
+TARGET_COPY_OUT_VENDOR := vendor
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -43,7 +46,8 @@ TARGET_NO_BOOTLOADER := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -195,7 +199,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # RIL
-BOARD_RIL_CLASS := ../../../$(DEVICE_PATH)/ril
 PROTOBUF_SUPPORTED := true
 TARGET_RIL_VARIANT := caf
 
@@ -203,9 +206,7 @@ TARGET_RIL_VARIANT := caf
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
-# Vendor init
-TARGET_INIT_VENDOR_LIB := libinit_gemini
-TARGET_RECOVERY_DEVICE_MODULES := libinit_gemini
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # WebView Beta
 PREBUILT_WEBVIEW_VERSION := chromium

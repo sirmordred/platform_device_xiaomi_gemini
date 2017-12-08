@@ -1,4 +1,4 @@
-#!/system/bin/sh
+#!/vendor/bin/sh
 # Copyright (c) 2009-2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -28,9 +28,9 @@
 
 start_copying_prebuilt_qcril_db()
 {
-    if [ -f /system/vendor/qcril.db -a ! -f /data/misc/radio/qcril.db ]; then
-        cp /system/vendor/qcril.db /data/misc/radio/qcril.db
-        chown -h radio.radio /data/misc/radio/qcril.db
+    if [ -f /vendor/qcril.db -a ! -f /data/vendor/radio/qcril.db ]; then
+        cp /vendor/qcril.db /data/vendor/radio/qcril.db
+        chown -h radio.radio /data/vendor/radio/qcril.db
     fi
 }
 
@@ -41,7 +41,7 @@ chown -LR system.system /proc/touchpanel
 # Copy qcril.db if needed for RIL
 #
 start_copying_prebuilt_qcril_db
-echo 1 > /data/misc/radio/db_check_done
+echo 1 > /data/vendor/misc/radio/db_check_done
 
 #
 # Make modem config folder and copy firmware config to that folder for RIL
@@ -64,7 +64,7 @@ if [ ! -f /firmware/verinfo/ver_info.txt -o "$prev_version_info" != "$cur_versio
 fi
 cp /firmware/image/modem_pr/mbn_ota.txt /data/misc/radio/modem_config
 chown radio.radio /data/misc/radio/modem_config/mbn_ota.txt
-echo 1 > /data/misc/radio/copy_complete
+echo 1 > /data/vendor/radio/copy_complete
 
 # Check build variant for printk logging
 # Current default minimum boot-time-default
