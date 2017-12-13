@@ -268,8 +268,7 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
-    libxml2 \
-    rild_socket
+    libxml2
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
@@ -277,7 +276,7 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libshims_ims
+    libshim_symbols
 
 # WiFi
 PRODUCT_PACKAGES += \

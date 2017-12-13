@@ -16,4 +16,14 @@
 
 /* TODO: Actually provide implementations for these functions! */
 
+#define MAX_SOCKET_NAME_LENGTH 6
+
+char rild[MAX_SOCKET_NAME_LENGTH] = "rild";
+
+static const char* process_name = "unknown";
+
+const char* get_process_name(void) {
+    return process_name;
+}
+
 void _ZNK7android11MediaBuffer8refcountEv() {}

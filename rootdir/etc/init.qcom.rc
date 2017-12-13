@@ -38,7 +38,7 @@ on early-init
     symlink /data/tombstones /tombstones
 
 on init
-    export LD_SHIM_LIBS /vendor/lib64/lib-imsvt.so|/vendor/lib64/libshims_ims.so:/vendor/lib64/libril-qc-qmi-1.so|/vendor/lib64/rild_socket.so
+    export LD_PRELOAD "/vendor/lib64/libshim_symbols.so"
 
     # Set permissions for persist partition
     mkdir /persist 0771 root system
