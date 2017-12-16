@@ -23,6 +23,8 @@ $(call inherit-product-if-exists, vendor/xiaomi/msm8996-common/msm8996-common-ve
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+PRODUCT_SHIPPING_API_LEVEL := 24
+
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_PACKAGES += \
@@ -81,7 +83,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
-    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
+    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -126,12 +129,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8996 \
-    libmm-qcamera \
-    SnapdragonCamera
-
-# Device config scripts
-PRODUCT_PACKAGES += \
-    init.panel.sh
+    libmm-qcamera
 
 # Consumerir
 PRODUCT_PACKAGES += \
@@ -141,16 +139,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
-    init.qcom.sensors.sh \
     init.qcom.usb.rc \
     init.qcom.usb.diag.rc \
     ueventd.qcom.rc \
-    init.qcom.sh
+    init.qcom.sensors.sh \
+    init.qcom.sh \
+    init.panel.sh
 
-# CMHW
-PRODUCT_PACKAGES += \
-    org.cyanogenmod.hardware \
-    org.cyanogenmod.hardware.xml
+# JDC-specific init file
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/init.jdc.rc:root/init.jdc.rc
 
 # CNE
 PRODUCT_PACKAGES += \
@@ -294,7 +292,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.secure=0 \
     ro.adb.secure=0 \
     ro.debuggable=1 \
-    persist.service.adb.enable=1
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=adb
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.vndk.version=26.1.0 \

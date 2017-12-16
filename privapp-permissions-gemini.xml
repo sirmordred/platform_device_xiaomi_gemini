@@ -54,4 +54,25 @@
             package="com.qualcomm.location">
         <permission name="android.permission.CONTROL_LOCATION_UPDATES"/>
     </privapp-permissions>
+    <privapp-permissions package="android.ext.services">
+        <permission name="android.permission.PROVIDE_RESOLVER_RANKER_SERVICE"/>
+    </privapp-permissions>
+    <privapp-permissions
+            package="com.android.launcher3">
+        <permission name="android.permission.BIND_APPWIDGET"/>
+    </privapp-permissions>
+    <privapp-permissions
+            package="com.android.apps.tag">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+    <privapp-permissions
+            package="org.codeaurora.snapcam">
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+        <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+        <permission name="android.permission.PREVENT_POWER_KEY"/>
+    </privapp-permissions>
+    <privapp-permissions
+            package="com.android.musicfx">
+        <permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
+    </privapp-permissions>
 </permissions>
