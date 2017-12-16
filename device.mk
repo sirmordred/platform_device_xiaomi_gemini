@@ -138,6 +138,7 @@ PRODUCT_PACKAGES += \
 # Device init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.jdc.rc \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.qcom.usb.diag.rc \
@@ -145,10 +146,6 @@ PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.qcom.sh \
     init.panel.sh
-
-# JDC-specific init file
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/init.jdc.rc:root/init.jdc.rc
 
 # CNE
 PRODUCT_PACKAGES += \

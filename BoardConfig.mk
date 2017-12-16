@@ -66,9 +66,6 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_BOARD_PLATFORM := msm8996
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno530
 
-# System properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-uart"
 
@@ -188,7 +185,7 @@ BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.full
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Releasetools
