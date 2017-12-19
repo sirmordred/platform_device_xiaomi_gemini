@@ -364,7 +364,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.gps.agps_provider=1 \
 	persist.radio.NO_STAPA=1 \
 	persist.radio.VT_HYBRID_ENABLE=1 \
-	persist.media.treble_omx=false \
 	ro.nfc.port=I2C \
 	persist.nfc.smartcard.config=SIM1,SIM2,eSE1 \
 	persist.rild.nitz_plmn="" \
